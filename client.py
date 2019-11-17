@@ -47,6 +47,7 @@ while True:
     if msg == '테스트시작':        
         #글로벌 변수선언
         driver = webdriver.Chrome(driver_path,  chrome_options=_chrome_options)
+        driver.get(url)
         s_msg('클라이언트 세팅 완료')
         
     elif msg == '테스트종료':
