@@ -34,12 +34,12 @@ while True:
         print('받은 메시지 : '+msg)
         
         if msg == '패치시작':
-            url = 'https://github.com/janghyeonan/client/blob/master/client.py'
+            url = 'https://raw.githubusercontent.com/janghyeonan/client/master/client.py'
             r = requests.get(url, allow_redirects=True)
             open(r'c:\\renardy\\client.py', 'wb').write(r.content)
             print('클라 다운로드 완료!')
             
-            url2 = 'https://github.com/janghyeonan/client/blob/master/patch_client.py'
+            url2 = 'https://raw.githubusercontent.com/janghyeonan/client/master/patch_client.py'
             r2 = requests.get(url2, allow_redirects=True)
             open(r'c:\\renardy\\patch_client.py', 'wb').write(r2.content)
             print('패치클라이언 완료!')
