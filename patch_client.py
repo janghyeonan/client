@@ -34,22 +34,22 @@ while True:
         print('받은 메시지 : '+msg)
         
         if msg == '패치시작':
-            url = 'http://192.168.0.37:8000/static/client1.pyp'
+            url = 'https://raw.githubusercontent.com/janghyeonan/client/master/client1.py'
             r = requests.get(url, allow_redirects=True)
             open(r'c:\\qa\\client1.py', 'wb').write(r.content)
             print('클라1 다운로드 완료!')
             
-            url1 = 'http://192.168.0.37:8000/static/client2.pyp'
+            url1 = 'https://raw.githubusercontent.com/janghyeonan/client/master/client2.py'
             r1 = requests.get(url1, allow_redirects=True)
             open(r'c:\\qa\\client2.py', 'wb').write(r1.content)
             print('클라2 다운로드 완료!')
             
-            url2 = 'http://192.168.0.37:8000/static/client3.pyp'
+            url2 = 'https://raw.githubusercontent.com/janghyeonan/client/master/client3.py'
             r2 = requests.get(url2, allow_redirects=True)
             open(r'c:\\qa\\client3.py', 'wb').write(r2.content)
             print('클라3 다운로드 완료!')
             
-            url3 = 'http://192.168.0.37:8000/static/patch_client.pyp'
+            url3 = 'https://raw.githubusercontent.com/janghyeonan/client/master/patch_client.py'
             r3 = requests.get(url3, allow_redirects=True)
             open(r'c:\\qa\\patch_client.py', 'wb').write(r3.content)
             print('패치클라이언 완료!')
