@@ -58,6 +58,7 @@ while True:
             r4 = requests.get(url4, allow_redirects=True)
             open(r'c:\\qa\\patch_client.py', 'wb').write(r4.content)
             print('클라4 다운로드 완료!')
+            
         elif msg =='클라실행':
             subprocess.Popen(r'c:\\remote_client.bat', creationflags=subprocess.CREATE_NEW_CONSOLE)
         elif msg =='연결종료':
