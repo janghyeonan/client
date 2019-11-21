@@ -2,7 +2,7 @@
 """
 Created on Fri Nov  8 14:33:08 2019
 
-@author: ajh910 
+@author: ajh910
 """
 import socket 
 import requests
@@ -53,6 +53,11 @@ while True:
             r3 = requests.get(url3, allow_redirects=True)
             open(r'c:\\qa\\patch_client.py', 'wb').write(r3.content)
             print('패치클라이언 완료!')
+            
+            url4 = 'https://raw.githubusercontent.com/janghyeonan/client/master/client4.py'
+            r4 = requests.get(url4, allow_redirects=True)
+            open(r'c:\\qa\\patch_client.py', 'wb').write(r4.content)
+            print('클라4 다운로드 완료!')
         elif msg =='클라실행':
             subprocess.Popen(r'c:\\remote_client.bat', creationflags=subprocess.CREATE_NEW_CONSOLE)
         elif msg =='연결종료':
