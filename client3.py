@@ -131,8 +131,10 @@ def selector(driver_n, command): #공용 좌표 클릭 함수  # 0, 로비 = 1�
         ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), xyz[0], xyz[1]).click().perform() 
     elif xy[2] == 1:
         ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), xyz[0], xyz[1]).click_and_hold().perform()
-        time.sleep(1)  
+        time.sleep(0.1)  
         ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), xyz[0], xyz[1]+5).click().perform()  
+    elif xy[2] == 2:
+        ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), xyz[0], xyz[1]).click_and_hold().perform()
     
 
 
@@ -148,8 +150,10 @@ def canvas_click(a,b,c):
                 ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), a, b).click().perform() 
             elif c == 1:
                 ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), a, b).click_and_hold().perform()
-                time.sleep(1)  
+                time.sleep(0.1)  
                 ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), a, b+5).click().perform()  
+            elif c == 2:
+                ActionChains(h).move_to_element_with_offset(h.find_element_by_xpath("//*[@id='mainView']/canvas"), a, b).click_and_hold().perform()
     except Exception as ex:
         print('에러가 발생 했습니다2\n', ex)
 
@@ -163,10 +167,12 @@ def drc(n, x):
         
         if x[2] == 1:
             ActionChains(dr_list[n]).move_to_element_with_offset(dr_list[n].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click_and_hold().perform()
-            time.sleep(1)  
+            time.sleep(0.1)  
             ActionChains(dr_list[n]).move_to_element_with_offset(dr_list[n].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]+5).click().perform()         
         elif x[2] == 0:
             ActionChains(dr_list[n]).move_to_element_with_offset(dr_list[n].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click().perform()             
+        elif x[2] == 2:
+            ActionChains(dr_list[n]).move_to_element_with_offset(dr_list[n].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click_and_hold().perform()
     except Exception as ex:
         print('에러가 발생 했습니다4\n', ex)
 
@@ -203,10 +209,12 @@ def inging(dr, y, n): #개별 반복 #클라 명령어 횟수 ##################
         for i in range(0, int(n)+1):
             if x[2] == 1:
                 ActionChains(dr_list[dr]).move_to_element_with_offset(dr_list[dr].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click_and_hold().perform()
-                time.sleep(1)  
+                time.sleep(0.1)  
                 ActionChains(dr_list[dr]).move_to_element_with_offset(dr_list[dr].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]+5).click().perform()         
             elif x[2] == 0:
                 ActionChains(dr_list[dr]).move_to_element_with_offset(dr_list[dr].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click().perform() 
+            elif x[2] == 2:
+                ActionChains(dr_list[dr]).move_to_element_with_offset(dr_list[dr].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click_and_hold().perform()
     
     except Exception as ex:
         print('에러가 발생 했습니다7\n', ex)
@@ -214,25 +222,6 @@ def inging(dr, y, n): #개별 반복 #클라 명령어 횟수 ##################
 
 #개별 클라이언트 진행(순서대로)
 def sunse(dr, y): #개별 클라, 명령어     #############################
-    dr = int(dr)-1
-    try:        
-        global driver1, driver2, driver3, driver4, driver5, driver6, driver7, driver8
-        dr_list = [driver1, driver2, driver3, driver4, driver5, driver6, driver7, driver8]
-        for i in y:
-            x = xy(i)            
-            if x[2] == 1:
-                ActionChains(dr_list[dr]).move_to_element_with_offset(dr_list[dr].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click_and_hold().perform()
-                time.sleep(1)  
-                ActionChains(dr_list[dr]).move_to_element_with_offset(dr_list[dr].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]+5).click().perform()         
-            elif x[2] == 0:
-                ActionChains(dr_list[dr]).move_to_element_with_offset(dr_list[dr].find_element_by_xpath("//*[@id='mainView']/canvas"), x[0], x[1]).click().perform()  
-            time.sleep(5)
-            
-    except Exception as ex:
-        print('에러가 발생 했습니다8\n', ex)
-
-    
-##### =============================================================================
 
 print('- 클라이언트 서버에 접속 완료!\n수신 대기중 ...')
 
